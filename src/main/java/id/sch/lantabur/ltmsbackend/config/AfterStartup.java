@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-// this approach is also possible https://stackoverflow.com/a/44923402/8885105
+// this approach is also possible to listen startup event: https://stackoverflow.com/a/44923402/8885105
 @Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class AfterStartup implements ApplicationListener<ContextRefreshedEvent> {
