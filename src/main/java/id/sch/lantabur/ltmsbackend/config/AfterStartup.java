@@ -15,21 +15,10 @@ import org.springframework.stereotype.Component;
 public class AfterStartup implements ApplicationListener<ContextRefreshedEvent> {
 
     private final PenggunaRepository penggunaRepository;
-    //private final ServiceRegistry serviceRegistry;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (!event.getApplicationContext().getBean("isProd", boolean.class)) {
-            //ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
-
-            /*MetadataSources metadata = new MetadataSources(serviceRegistry);
-            metadata.addAnnotatedClass(Alquran.class);
-            metadata.addAnnotatedClass(Kejadian.class);
-            metadata.addAnnotatedClass(Pengguna.class);
-
-            EnumSet<TargetType> enumSet = EnumSet.of(TargetType.DATABASE);
-            SchemaExport schemaExport = new SchemaExport();
-            schemaExport.execute(enumSet, SchemaExport.Action.BOTH, metadata.buildMetadata());*/
 
             penggunaRepository.save(new Pengguna("sayyidyofa", "password", Role.ADMIN));
 
