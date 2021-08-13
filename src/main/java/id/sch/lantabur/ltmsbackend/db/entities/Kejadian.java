@@ -1,6 +1,6 @@
 package id.sch.lantabur.ltmsbackend.db.entities;
 
-import id.sch.lantabur.ltmsbackend.db.ListenableEntity;
+import id.sch.lantabur.ltmsbackend.db.BaseEntity;
 import id.sch.lantabur.ltmsbackend.util.enums.EventModelType;
 import id.sch.lantabur.ltmsbackend.util.enums.EventType;
 import lombok.*;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Setter
-public class Kejadian extends ListenableEntity {
+public class Kejadian extends BaseEntity {
 
     @Enumerated
     @Column(nullable = false)
