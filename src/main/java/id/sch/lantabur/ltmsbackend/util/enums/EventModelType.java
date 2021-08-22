@@ -1,12 +1,12 @@
 package id.sch.lantabur.ltmsbackend.util.enums;
 
 public enum EventModelType {
-    USER,
+    PENGGUNA,
     TEACHER,
-    TAHFIZH_GROUP,
+    TAHFIZHGROUP,
     STUDENT,
     PARENT,
-    SESSION,
+    SESI,
     PERCEPATAN,
     ALQURAN
 }
