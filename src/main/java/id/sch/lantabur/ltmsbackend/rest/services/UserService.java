@@ -1,5 +1,6 @@
 package id.sch.lantabur.ltmsbackend.rest.services;
 
+import id.sch.lantabur.ltmsbackend.db.entities.Pengguna;
 import id.sch.lantabur.ltmsbackend.db.repositories.PenggunaRepository;
 import id.sch.lantabur.ltmsbackend.rest.dto.kejadian.PlainEvent;
 import id.sch.lantabur.ltmsbackend.rest.dto.pengguna.PenggunaDto;
@@ -39,7 +40,7 @@ public class UserService {
         return penggunaRepository
                 .findAll()
                 .stream()
-                .map(p -> new PenggunaDto(p.getUsername(), p.getRole()))
+                .map(Pengguna::toPenggunaDto)
                 .toList();
     }
 

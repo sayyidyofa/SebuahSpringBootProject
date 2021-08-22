@@ -1,6 +1,7 @@
 package id.sch.lantabur.ltmsbackend.db.entities;
 
 import id.sch.lantabur.ltmsbackend.db.AuditableModel;
+import id.sch.lantabur.ltmsbackend.rest.dto.pengguna.PenggunaDto;
 import id.sch.lantabur.ltmsbackend.util.enums.Role;
 import lombok.*;
 
@@ -29,4 +30,8 @@ public class Pengguna extends AuditableModel {
 
     @OneToMany(mappedBy = "actor")
     private Set<Kejadian> auditLogs;
+
+    public PenggunaDto toPenggunaDto() {
+        return new PenggunaDto(username, role);
+    }
 }
