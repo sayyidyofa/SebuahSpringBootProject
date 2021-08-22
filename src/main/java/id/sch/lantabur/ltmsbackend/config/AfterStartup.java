@@ -1,8 +1,6 @@
 package id.sch.lantabur.ltmsbackend.config;
 
-import id.sch.lantabur.ltmsbackend.db.entities.Pengguna;
 import id.sch.lantabur.ltmsbackend.db.repositories.PenggunaRepository;
-import id.sch.lantabur.ltmsbackend.util.enums.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -20,7 +18,7 @@ public class AfterStartup implements ApplicationListener<ContextRefreshedEvent> 
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (!event.getApplicationContext().getBean("isProd", boolean.class)) {
 
-            penggunaRepository.save(new Pengguna("sayyidyofa", "password", Role.ADMIN));
+            //penggunaRepository.save(new Pengguna("system", "password", Role.ADMIN));
 
         }
     }
