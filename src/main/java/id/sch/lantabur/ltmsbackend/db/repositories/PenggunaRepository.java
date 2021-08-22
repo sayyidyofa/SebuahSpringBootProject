@@ -4,4 +4,6 @@ import id.sch.lantabur.ltmsbackend.db.entities.Pengguna;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PenggunaRepository extends JpaRepository<Pengguna, Long> {
+
+    Pengguna findByUsername(String username);
 }
