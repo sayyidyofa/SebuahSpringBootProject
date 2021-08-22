@@ -1,6 +1,6 @@
 package id.sch.lantabur.ltmsbackend.db.entities;
 
-import id.sch.lantabur.ltmsbackend.db.ListenableEntity;
+import id.sch.lantabur.ltmsbackend.db.AuditableModel;
 import id.sch.lantabur.ltmsbackend.util.enums.Role;
 import lombok.*;
 
@@ -10,8 +10,9 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 @RequiredArgsConstructor
+@Getter
 @Setter
-public class Pengguna extends ListenableEntity {
+public class Pengguna extends AuditableModel {
 
     @Column(nullable = false)
     @NonNull
@@ -26,6 +27,6 @@ public class Pengguna extends ListenableEntity {
     @NonNull
     private Role role;
 
-    @OneToMany(targetEntity = Kejadian.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "actor")
     private Set<Kejadian> auditLogs;
 }
