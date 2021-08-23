@@ -33,6 +33,7 @@ public class AuthRoutes {
         } else {
             UserProfile profile = new JwtProfile();
             profile.setId(user.getId().toString());
+            profile.addRole(user.getRole().name());
             return BCrypt.checkpw(loginable.password, user.getPassword())
                     ? jwtGenerator.generate(profile)
                     : "failed";
