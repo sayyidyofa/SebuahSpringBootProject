@@ -4,7 +4,7 @@ public enum Role {
     ADMIN,
     TEACHER,
     STUDENT,
-    TAHFIZH_HEAD,
+    TAHFIZHHEAD,
     KATIB,
     PARENT
 }
